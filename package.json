@@ -1,0 +1,52 @@
+{
+  "name": "otissv-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "run-p lint:watch develop",
+    "develop": "gatsby develop -p 9988 -o",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:watch": "esw . --ext .ts,.tsx -w",
+    "fix": "eslint . --ext .ts,.tsx  --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Otis Virginie",
+  "license": "ISC",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "emotion": "^11.0.0",
+    "gatsby": "^2.30.2",
+    "gatsby-plugin-mdx": "^1.8.0",
+    "gatsby-source-filesystem": "^2.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@redesign-system/react": "^0.1.0",
+    "@redesign-system/react-material-icons": "^0.1.0",
+    "@redesign-system/react-ui": "^0.1.0",
+    "@redesign-system/theme": "^0.1.0",
+    "@types/node": "^14.14.21",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "cypress": "^6.2.1",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-disable": "^2.0.1",
+    "eslint-plugin-functional": "^3.2.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-watch": "^7.0.0",
+    "husky": "^4.3.8",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "typedoc": "^0.20.14",
+    "typescript": "^4.1.3",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  }
+}
