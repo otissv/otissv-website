@@ -1,8 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable no-undef */
-/* eslint-disable functional/no-expression-statement */
-/* eslint-disable functional/immutable-data */
-// eslint-disable-next-line no-undef
+/* eslint-disable */
 
 module.exports = {
   semi: true,
@@ -10,4 +6,5 @@ module.exports = {
   singleQuote: false,
   printWidth: 80,
   tabWidth: 2,
+  true,
 };

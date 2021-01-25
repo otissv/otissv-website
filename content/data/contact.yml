@@ -1,0 +1,22 @@
+contact:
+  title: Contact
+  quote: The best way to predict the future is to create it.
+  lead: Let's create the future together
+  support: Call for immediate support to this number
+
+  form:
+    fields:
+      email:
+        id: email
+        label: Your Email
+        required: true
+      subject:
+        id: subject
+        label: Subject
+        required: true
+      message:
+        id: message
+        label: Message
+        required: true
+    footer: I'll reply within 24 hours!
+    button: Hire me today

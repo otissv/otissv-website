@@ -1,8 +1,16 @@
-/* eslint-disable functional/no-expression-statement */
+/* eslint-disable */
 
-// eslint-disable-next-line functional/immutable-data,  no-undef
 module.exports = {
+  siteMetadata: {
+    title: `Otis weblog`,
+    description: `This is my coding blog where I write about my coding journey.`,
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-feed-mdx`,
+    `gatsby-transformer-yaml`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
@@ -21,8 +29,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         // eslint-disable-next-line no-undef
-        path: `${__dirname}/posts`,
+        path: `${__dirname}/content/data`,
+        name: `data`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // eslint-disable-next-line no-undef
+        path: `${__dirname}/content/posts`,
         name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
       },
     },
   ],

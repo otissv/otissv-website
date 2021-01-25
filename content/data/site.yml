@@ -1,0 +1,7 @@
+site:
+  title: Otis weblog
+  description: This is my coding blog where I write about my coding journey.
+  author: Otis Virginie
+  lang: en
+
+  fonts: [https://fonts.googleapis.com/css2?family=Montserrat&display=swap]

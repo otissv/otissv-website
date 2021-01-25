@@ -1,0 +1,14 @@
+menu:
+  - label: Home
+    url: /
+  - label: Services
+    url: "/#services"
+  - label: About
+    url: "/#about"
+  # - label: Open Source
+  #   url: /open-source
+  - label: Blog
+    url: /blog
+  - label: Hire Me
+    url: "/#contact"
+    cta: true

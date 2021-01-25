@@ -1,0 +1,11 @@
+subscribe:
+  title: Join My Mailing List
+  content: The people on my mailing list are the first to hear about my new content. Join them by signing up now!
+  form:
+    info: No spam, ever!
+    input:
+      label: subscribe
+      id: subscribe
+      placeholder: Enter your email
+    button:
+      label: Sign up now

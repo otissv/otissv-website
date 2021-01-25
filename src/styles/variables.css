@@ -1,0 +1,12 @@
+:root {
+  --background-color: #1d2330;
+  --background-color-2: #141620;
+  --background-color-3: #2b313e;
+
+  --cta-background-color: #cf4141;
+  --cta-background-hover-color: #942e2e;
+
+  --link-color: #fab8d9;
+
+  --container: 1600px;
+}
