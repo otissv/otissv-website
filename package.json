@@ -20,6 +20,9 @@
     "@fontsource/montserrat": "^4.1.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@redesign-system/react": "^0.1.0",
+    "@redesign-system/react-material-icons": "^0.1.0",
+    "@redesign-system/react-ui": "^0.1.0",
     "@redesign-system/theme": "^0.1.0",
     "@types/react-helmet": "^6.1.0",
     "emotion": "^11.0.0",
@@ -39,9 +42,6 @@
     "react-share": "^4.3.1"
   },
   "devDependencies": {
-    "@redesign-system/react": "^0.1.0",
-    "@redesign-system/react-material-icons": "^0.1.0",
-    "@redesign-system/react-ui": "^0.1.0",
     "@types/node": "^14.14.21",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
