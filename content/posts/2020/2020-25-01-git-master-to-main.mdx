@@ -1,0 +1,29 @@
+---
+title: Replace git master branch with main
+date: 2020-01-25
+published: true
+---
+
+Move master to main:
+
+```
+git branch -m master main
+```
+
+Push main branch to git hub:
+
+```
+git push -u origin main
+```
+
+Point Head to main branch:
+
+```
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+```
+
+Delete master branch
+
+```
+git push origin --delete master
+```
