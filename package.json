@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-p lint:watch develop",
+    "build": "gatsby build",
     "develop": "gatsby develop -p 9988 -o",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:watch": "esw . --ext .ts,.tsx -w",
@@ -25,11 +26,13 @@
     "@redesign-system/react-ui": "^0.1.0",
     "@redesign-system/theme": "^0.1.0",
     "@types/react-helmet": "^6.1.0",
+    "add": "^2.0.6",
     "emotion": "^11.0.0",
     "gatsby": "^2.30.2",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-feed-mdx": "^1.0.1",
     "gatsby-plugin-mdx": "^1.8.0",
+    "gatsby-plugin-portal": "^1.0.7",
     "gatsby-plugin-react-helmet": "^3.8.0",
     "gatsby-plugin-sharp": "^2.13.1",
     "gatsby-source-filesystem": "^2.10.0",
@@ -39,7 +42,8 @@
     "react-helmet": "^6.1.0",
     "react-markdown": "^5.0.3",
     "react-scroll-trigger": "^0.6.10",
-    "react-share": "^4.3.1"
+    "react-share": "^4.3.1",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "@types/node": "^14.14.21",

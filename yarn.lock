@@ -934,7 +934,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.12.5"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@babel%2Fruntime/7.12.5#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
@@ -1721,8 +1721,8 @@
 
 "@redesign-system/react-ui@^0.1.0":
   version "0.1.0"
-  resolved "https://otis.bytesafe.dev/r/default/-/pull/@redesign-system%2Freact-ui/0.1.0#ae3feed9e789a4f8f805813a9f40352f2720c08d"
-  integrity sha512-pjo93SieQk0k4sWMU5VB/2Ru+vQ7aionMIEMZBJSD5Iw8SgWaFbTDTjyaboRtt7WngK/WOaYi8hcou0wewxWmA==
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@redesign-system%2Freact-ui/0.1.0#efa95a20e0d830e2fe4993283defa4198f1a576e"
+  integrity sha512-g6GHyWXGqNhx+3v0IE8Mutpugid5gJH4SaU7/YEdjkRuGRKJc66ZU5fDA/sNnX+3hvzg3cAzmztrD6+QrWAWkQ==
   dependencies:
     "@emotion/css" "^11.1.3"
     "@redesign-system/react" "^0.1.0"
@@ -2436,6 +2436,11 @@ acorn@^7.1.1, acorn@^7.4.0:
   version "7.4.1"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/acorn/7.4.1#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/add/2.0.6#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 address@1.0.3:
   version "1.0.3"
@@ -6904,6 +6909,13 @@ gatsby-plugin-page-creator@^2.9.0:
     gatsby-telemetry "^1.9.0"
     globby "^11.0.1"
     lodash "^4.17.20"
+
+gatsby-plugin-portal@^1.0.7:
+  version "1.0.7"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/gatsby-plugin-portal/1.0.7#c2ff2cb2bbec27e0ae9ab610857f603197189dc0"
+  integrity sha512-Drb2zj9qOVbt+/miINhyT7IvUaY+z/sxFT+0+p0yX4theKSVJgtu0YisA+DFlCmNl+KE6VjbqANZ0HUh6aWVMA==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
 
 gatsby-plugin-react-helmet@^3.8.0:
   version "3.9.0"
@@ -15818,6 +15830,11 @@ yargs@^16.1.0:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
+
+yarn@^1.22.10:
+  version "1.22.10"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/yarn/1.22.10#c99daa06257c80f8fa2c3f1490724e394c26b18c"
+  integrity sha512-IanQGI9RRPAN87VGTF7zs2uxkSyQSrSPsju0COgbsKQOOXr5LtcVPeyXWgwVa0ywG3d8dg6kSYKGBuYK021qeA==
 
 yauzl@^2.10.0, yauzl@^2.4.2:
   version "2.10.0"
