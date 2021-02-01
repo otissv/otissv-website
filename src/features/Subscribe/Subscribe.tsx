@@ -152,6 +152,7 @@ export function Subscribe({
           />
 
           <CTAButton
+            as="button"
             type="submit"
             mq={{
               md: {
