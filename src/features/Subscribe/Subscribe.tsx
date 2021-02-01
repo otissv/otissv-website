@@ -102,6 +102,9 @@ export function Subscribe({
         <Form
           id="subscribe"
           name="subscribe"
+          method="POST"
+          data-netlify="true"
+          netlify
           d="block"
           w="100%"
           mq={{
