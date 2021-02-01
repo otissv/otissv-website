@@ -101,7 +101,7 @@ export function Subscribe({
 
         <Form
           id="subscribe"
-          name="subscribe"
+          name="form-subscribe"
           method="POST"
           data-netlify="true"
           netlify
@@ -116,6 +116,7 @@ export function Subscribe({
             },
           }}
         >
+          <input type="hidden" name="form-subscribe" value="subscribe" />
           <Textbox
             id={inputId}
             value={email}
