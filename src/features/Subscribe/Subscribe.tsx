@@ -49,6 +49,7 @@ export function Subscribe({
   }
 
   function handleOnSubmit(e: any) {
+    console.log("form");
     // eslint-disable-next-line functional/no-expression-statement
     e.preventDefault();
 
@@ -100,11 +101,10 @@ export function Subscribe({
         </p>
 
         <Form
-          id="subscribe"
-          name="form-subscribe"
-          method="POST"
+          name="subscribe"
           data-netlify="true"
-          netlify
+          method="POST"
+          onSubmit={handleOnSubmit}
           d="block"
           w="100%"
           mq={{
@@ -116,7 +116,7 @@ export function Subscribe({
             },
           }}
         >
-          <input type="hidden" name="form-subscribe" value="subscribe" />
+          <input type="hidden" name="form-name" value="subscribe" />
           <Textbox
             id={inputId}
             value={email}
@@ -153,7 +153,6 @@ export function Subscribe({
 
           <CTAButton
             type="submit"
-            onClick={handleOnSubmit}
             mq={{
               md: {
                 min: {
