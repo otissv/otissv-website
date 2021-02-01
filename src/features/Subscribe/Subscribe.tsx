@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Textbox } from "@redesign-system/react-ui/Textbox";
+import { Box } from "@redesign-system/react-ui/Box";
 
 import { SubscribeProps } from "./types.subscribe";
 import { CTAButton } from "../../components/Button";
@@ -18,9 +19,9 @@ export function Subscribe({
   title,
 }: SubscribeProps): JSX.Element {
   const classNames = `Subscribe ${className}`;
-  const [email, setEmail] = useState("");
-  const [hasError, setHasError] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
+  const [email, setEmail] = React.useState("");
+  const [hasError, setHasError] = React.useState(false);
+  const [showThankYou, setShowThankYou] = React.useState(false);
 
   const css = `
     background: var(--background-color-3);
@@ -49,7 +50,6 @@ export function Subscribe({
   }
 
   function handleOnSubmit(e: any) {
-    console.log("form");
     // eslint-disable-next-line functional/no-expression-statement
     e.preventDefault();
 
@@ -61,10 +61,13 @@ export function Subscribe({
       isValid !== hasError && setHasError(isValid);
       // eslint-disable-next-line functional/no-conditional-statement
     } else {
+      const myForm: any = document.getElementById("form-subscribe");
+      const formData: any = new FormData(myForm);
+
       // eslint-disable-next-line functional/no-expression-statement
       fetch("/", {
         method: "POST",
-        body: new URLSearchParams(email).toString(),
+        body: new URLSearchParams(formData).toString(),
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
       })
         // .then((response: Response) => response.json())
@@ -101,70 +104,88 @@ export function Subscribe({
         </p>
 
         <Form
+          id="form-subscribe"
           name="subscribe"
           data-netlify="true"
           method="POST"
           onSubmit={handleOnSubmit}
-          d="block"
-          w="100%"
-          mq={{
-            md: {
-              min: {
-                height: 9,
-                display: "inline-flex",
-              },
-            },
-          }}
         >
           <input type="hidden" name="form-name" value="subscribe" />
-          <Textbox
-            id={inputId}
-            value={email}
-            label={inputLabel}
-            placeholder={inputPlaceholder}
-            onBlur={handleOnBlur}
-            onChange={handleOnChange}
-            required={true}
-            type="email"
-            appearance="SUBSCRIBE"
-            fs="20px"
-            h="52px"
-            flex={1}
-            mb={7}
-            mx={0}
-            border={hasError}
+          <Box
             css={`
-              border-bottom-left-radius: 30px;
-              border-top-left-radius: 30px;
-              border-bottom-right-radius: 30px;
-              border-top-right-radius: 30px;
-              padding-left: 30px;
+              width: 0;
+              height: 0px;
+              label {
+                display: block;
+                overflow: hidden;
+              }
             `}
-            mq={{
-              md: {
-                min: {
-                  borderTopRightRadius: "0px",
-                  borderBottomRightRadius: "0px",
-                  height: "63px",
-                },
-              },
-            }}
-          />
+          >
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </Box>
 
-          <CTAButton
-            as="button"
-            type="submit"
+          <Box
+            w="100%"
             mq={{
               md: {
                 min: {
-                  borderBottomLeftRadius: "0px",
-                  borderTopLeftRadius: "0px",
+                  height: 9,
+                  display: "inline-flex",
                 },
               },
             }}
           >
-            {buttonLabel}
-          </CTAButton>
+            <Textbox
+              id={inputId}
+              value={email}
+              label={inputLabel}
+              placeholder={inputPlaceholder}
+              onBlur={handleOnBlur}
+              onChange={handleOnChange}
+              required={true}
+              type="email"
+              appearance="SUBSCRIBE"
+              fs="20px"
+              h="52px"
+              flex={1}
+              mb={7}
+              mx={0}
+              border={hasError}
+              css={`
+                border-bottom-left-radius: 30px;
+                border-top-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                border-top-right-radius: 30px;
+                padding-left: 30px;
+              `}
+              mq={{
+                md: {
+                  min: {
+                    borderTopRightRadius: "0px",
+                    borderBottomRightRadius: "0px",
+                    height: "63px",
+                  },
+                },
+              }}
+            />
+
+            <CTAButton
+              as="button"
+              type="submit"
+              mq={{
+                md: {
+                  min: {
+                    borderBottomLeftRadius: "0px",
+                    borderTopLeftRadius: "0px",
+                  },
+                },
+              }}
+            >
+              {buttonLabel}
+            </CTAButton>
+          </Box>
         </Form>
         <Typography
           color="#F29B9B"
