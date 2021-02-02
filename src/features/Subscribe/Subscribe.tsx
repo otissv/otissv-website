@@ -26,6 +26,7 @@ export function Subscribe({
   const [email, setEmail] = React.useState("");
   const [hasError, setHasError] = React.useState(false);
   const [showThankYou, setShowThankYou] = React.useState(false);
+  const SUBMIT_FORM = "subscribe";
 
   const css = `
     background: var(--background-color-3);
@@ -67,7 +68,7 @@ export function Subscribe({
     } else {
       // eslint-disable-next-line functional/no-expression-statement
       submitNetlifyForm({
-        formId: "form-subscribe",
+        formId: `form-${SUBMIT_FORM}`,
       })
         .then((response: any) => {
           // eslint-disable-next-line functional/no-conditional-statement
@@ -109,13 +110,14 @@ export function Subscribe({
         </p>
 
         <Form
-          id="form-subscribe"
-          name="subscribe"
+          id={`form-${SUBMIT_FORM}`}
+          name={SUBMIT_FORM}
           data-netlify="true"
+          netlify
           method="POST"
           onSubmit={handleOnSubmit}
         >
-          <NetlifyFormFields name="subscribe" />
+          <NetlifyFormFields name={SUBMIT_FORM} />
 
           <Box
             w="100%"

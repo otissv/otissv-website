@@ -39,7 +39,7 @@ export function Contact<Props extends ContactProps>({
 }: Props): JSX.Element {
   const { animate, onEnter } = useScrollTrigger();
   const [showThankYou, setShowThankYou] = React.useState(false);
-
+  const CONTACT_FORM = "contact";
   const { button, footer } = form || {};
   const classNames = `Contact ${className}`;
 
@@ -63,7 +63,7 @@ export function Contact<Props extends ContactProps>({
     if (isValid === true) {
       // eslint-disable-next-line functional/no-expression-statement
       submitNetlifyForm({
-        formId: "form-contact",
+        formId: `form-${CONTACT_FORM}`,
       })
         .then((response: any) => {
           // eslint-disable-next-line functional/no-conditional-statement
@@ -174,9 +174,10 @@ export function Contact<Props extends ContactProps>({
               {lead}
             </Lead>
             <Form
-              id="form-contact"
-              name="contact"
+              id={`form-${CONTACT_FORM}`}
+              name={CONTACT_FORM}
               data-netlify="true"
+              netlify
               method="POST"
               onSubmit={handleOnSubmit}
               radius="5px"
@@ -211,7 +212,7 @@ export function Contact<Props extends ContactProps>({
                   marginBottom: 4,
                 }}
               >
-                <NetlifyFormFields name="subscribe" />
+                <NetlifyFormFields name={CONTACT_FORM} />
 
                 <ContactFormField {...state.email} dispatch={dispatch} />
                 <ContactFormField
