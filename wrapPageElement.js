@@ -12,16 +12,6 @@ const myCache = createCache({
   stylisPlugins: [
     /* your plugins here */
   ],
-  // prefix based on the css property
-  prefix: (key) => {
-    switch (key) {
-      case "flex":
-        return false;
-      case "transform":
-      default:
-        return true;
-    }
-  },
 });
 
 export const wrapPageElement = ({ element }) => (
