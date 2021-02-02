@@ -23,7 +23,6 @@ import { Heading } from "../../components/Heading";
 import { Lead } from "../../components/Lead";
 import { Section } from "../../components/Section";
 import { useContactForm } from "./useContactForm";
-import { stringify } from "querystring";
 
 export function Contact<Props extends ContactProps>({
   className = "",
