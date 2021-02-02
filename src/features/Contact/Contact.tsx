@@ -10,6 +10,10 @@ import { everyTrue } from "ufunc/everyTrue";
 import { ScrollTrigger } from "../../components/ScrollTrigger";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 import { useAnimations } from "../../hooks/useAnimations";
+import {
+  NetlifyFormFields,
+  submitNetlifyForm,
+} from "../../components/NetlifyForm";
 
 import {
   ContactProps,
@@ -57,16 +61,11 @@ export function Contact<Props extends ContactProps>({
 
     // eslint-disable-next-line functional/no-conditional-statement
     if (isValid === true) {
-      const myForm: any = document.getElementById("form-contact");
-      const formData: any = new FormData(myForm);
-
       // eslint-disable-next-line functional/no-expression-statement
-      fetch("/", {
-        method: "POST",
-        body: new URLSearchParams(formData).toString(),
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      submitNetlifyForm({
+        formId: "form-contact",
       })
-        .then((response: Response) => {
+        .then((response: any) => {
           // eslint-disable-next-line functional/no-conditional-statement
           if (response.status === 200) {
             // eslint-disable-next-line functional/no-expression-statement
@@ -212,6 +211,8 @@ export function Contact<Props extends ContactProps>({
                   marginBottom: 4,
                 }}
               >
+                <NetlifyFormFields name="subscribe" />
+
                 <ContactFormField {...state.email} dispatch={dispatch} />
                 <ContactFormField
                   mt={7}

@@ -7,6 +7,10 @@ import { CTAButton } from "../../components/Button";
 import { Form } from "../../components/Form";
 import { Section } from "../../components/Section";
 import { Typography } from "@redesign-system/react-ui/Typography";
+import {
+  NetlifyFormFields,
+  submitNetlifyForm,
+} from "../../components/NetlifyForm";
 
 export function Subscribe({
   buttonLabel,
@@ -61,16 +65,11 @@ export function Subscribe({
       isInvalid !== hasError && setHasError(isInvalid);
       // eslint-disable-next-line functional/no-conditional-statement
     } else {
-      const myForm: any = document.getElementById("form-subscribe");
-      const formData: any = new FormData(myForm);
-
       // eslint-disable-next-line functional/no-expression-statement
-      fetch("/", {
-        method: "POST",
-        body: new URLSearchParams(formData).toString(),
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      submitNetlifyForm({
+        formId: "form-subscribe",
       })
-        .then((response: Response) => {
+        .then((response: any) => {
           // eslint-disable-next-line functional/no-conditional-statement
           if (response.status === 200) {
             // eslint-disable-next-line functional/no-expression-statement
@@ -116,21 +115,7 @@ export function Subscribe({
           method="POST"
           onSubmit={handleOnSubmit}
         >
-          <input type="hidden" name="form-name" value="subscribe" />
-          <Box
-            css={`
-              width: 0;
-              height: 0px;
-              label {
-                display: block;
-                overflow: hidden;
-              }
-            `}
-          >
-            <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-          </Box>
+          <NetlifyFormFields name="subscribe" />
 
           <Box
             w="100%"
