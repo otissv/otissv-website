@@ -5,6 +5,8 @@ import { Fieldset } from "@redesign-system/react-ui/Fieldset";
 import { FormTextbox } from "@redesign-system/react-ui/FormTextbox";
 import { Typography } from "@redesign-system/react-ui/Typography";
 import { toSnakeCase } from "ufunc/textTransform";
+import { everyTrue } from "ufunc/everyTrue";
+
 import { ScrollTrigger } from "../../components/ScrollTrigger";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
 import { useAnimations } from "../../hooks/useAnimations";
@@ -21,6 +23,7 @@ import { Heading } from "../../components/Heading";
 import { Lead } from "../../components/Lead";
 import { Section } from "../../components/Section";
 import { useContactForm } from "./useContactForm";
+import { stringify } from "querystring";
 
 export function Contact<Props extends ContactProps>({
   className = "",
@@ -32,12 +35,48 @@ export function Contact<Props extends ContactProps>({
   title,
 }: Props): JSX.Element {
   const { animate, onEnter } = useScrollTrigger();
+  const [showThankYou, setShowThankYou] = React.useState(false);
 
   const { button, footer } = form || {};
   const classNames = `Contact ${className}`;
 
   const [state, dispatch] = useContactForm(form);
 
+  function validate(): boolean {
+    const fields = Object.values(state).map((field: Record<string, any>) => {
+      return !field.validate(field);
+    });
+
+    return everyTrue(fields);
+  }
+
+  function handleOnSubmit(e: any) {
+    // eslint-disable-next-line functional/no-expression-statement
+    e.preventDefault();
+
+    const isValid = validate();
+
+    // eslint-disable-next-line functional/no-conditional-statement
+    if (isValid === true) {
+      const myForm: any = document.getElementById("form-contact");
+      const formData: any = new FormData(myForm);
+
+      // eslint-disable-next-line functional/no-expression-statement
+      fetch("/", {
+        method: "POST",
+        body: new URLSearchParams(formData).toString(),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      })
+        .then((response: Response) => {
+          // eslint-disable-next-line functional/no-conditional-statement
+          if (response.status === 200) {
+            // eslint-disable-next-line functional/no-expression-statement
+            setShowThankYou(true);
+          }
+        })
+        .catch(console.error);
+    }
+  }
   return (
     <Section
       id="contact"
@@ -137,6 +176,11 @@ export function Contact<Props extends ContactProps>({
               {lead}
             </Lead>
             <Form
+              id="form-contact"
+              name="contact"
+              data-netlify="true"
+              method="POST"
+              onSubmit={handleOnSubmit}
               radius="5px"
               bg="var(--background-color-2)"
               w="100%"
@@ -186,9 +230,11 @@ export function Contact<Props extends ContactProps>({
               <CTAButton as="button" type="submit" mt={8}>
                 {button}
               </CTAButton>
-              <Typography fs={1} mt={4}>
+              <Typography fs={1} mt={4} mb={5}>
                 {footer}
               </Typography>
+
+              {showThankYou && <p>Thank you for subscribing.</p>}
             </Form>
 
             <Typography
@@ -208,6 +254,7 @@ export function Contact<Props extends ContactProps>({
                 {telephone}
               </a>
             </Typography>
+
             <Box
               d="none"
               h="200px"

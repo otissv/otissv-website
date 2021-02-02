@@ -53,12 +53,12 @@ export function Subscribe({
     // eslint-disable-next-line functional/no-expression-statement
     e.preventDefault();
 
-    const isValid = validateEmail(email);
+    const isInvalid = validateEmail(email);
 
     // eslint-disable-next-line functional/no-conditional-statement
-    if (isValid === true) {
+    if (isInvalid === true) {
       // eslint-disable-next-line functional/no-expression-statement
-      isValid !== hasError && setHasError(isValid);
+      isInvalid !== hasError && setHasError(isInvalid);
       // eslint-disable-next-line functional/no-conditional-statement
     } else {
       const myForm: any = document.getElementById("form-subscribe");
@@ -70,11 +70,17 @@ export function Subscribe({
         body: new URLSearchParams(formData).toString(),
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
       })
-        // .then((response: Response) => response.json())
-        .then(() => setShowThankYou(true))
-        .catch(console.log);
+        .then((response: Response) => {
+          // eslint-disable-next-line functional/no-conditional-statement
+          if (response.status === 200) {
+            // eslint-disable-next-line functional/no-expression-statement
+            setShowThankYou(true);
+          }
+        })
+        .catch(console.error);
     }
   }
+
   return (
     <Section
       id="subscribe"
