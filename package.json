@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-p lint:watch develop",
+    "clean": "gatsby clean",
     "build": "gatsby build",
     "develop": "gatsby develop -p 9988 -o",
     "lint": "eslint src --ext .ts,.tsx",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.4",
+    "@emotion/server": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@fontsource/montserrat": "^4.1.0",
     "@mdx-js/mdx": "^1.6.22",

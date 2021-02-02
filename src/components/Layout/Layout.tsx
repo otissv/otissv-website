@@ -1,7 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { ThemeProvider } from "@redesign-system/react/ThemeContext";
 
 import { LayoutProps } from "./types.layout";
 import { Seo } from "../Seo";
+import { theme } from "../../styles/theme";
+
 export function Layout<Props extends LayoutProps>({
   author,
   children,
@@ -12,7 +15,7 @@ export function Layout<Props extends LayoutProps>({
   title,
 }: Props): JSX.Element {
   return (
-    <Fragment>
+    <ThemeProvider theme={theme}>
       <Seo
         author={author}
         description={description}
@@ -23,6 +26,6 @@ export function Layout<Props extends LayoutProps>({
       />
 
       {children}
-    </Fragment>
+    </ThemeProvider>
   );
 }

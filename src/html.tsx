@@ -1,7 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
 
-export default function HTML(props) {
+interface HtmlInterface {
+  readonly htmlAttributes: Record<string, any>;
+  readonly headComponents: readonly any[];
+  readonly bodyAttributes: Record<string, any>;
+  readonly preBodyComponents: readonly any[];
+  readonly body: string;
+  readonly postBodyComponents: readonly any[];
+}
+
+export default function HTML(props: HtmlInterface): JSX.Element {
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -23,14 +31,5 @@ export default function HTML(props) {
         {props.postBodyComponents}
       </body>
     </html>
-  )
-}
-
-HTML.propTypes = {
-  htmlAttributes: PropTypes.object,
-  headComponents: PropTypes.array,
-  bodyAttributes: PropTypes.object,
-  preBodyComponents: PropTypes.array,
-  body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
+  );
 }

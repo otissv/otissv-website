@@ -1,4 +1,6 @@
-/* eslint-disable */
+/* eslint-disable no-undef */
+/* eslint-disable functional/immutable-data */
+/* eslint-disable functional/no-expression-statement */
 
 module.exports = {
   siteMetadata: {

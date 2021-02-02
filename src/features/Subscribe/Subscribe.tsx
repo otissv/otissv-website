@@ -113,7 +113,7 @@ export function Subscribe({
           id={`form-${SUBMIT_FORM}`}
           name={SUBMIT_FORM}
           data-netlify="true"
-          netlify={true}
+          netlify
           method="POST"
           onSubmit={handleOnSubmit}
         >

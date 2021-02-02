@@ -1,4 +1,7 @@
-/* eslint-disable */
+/* eslint-disable no-undef */
+/* eslint-disable functional/immutable-data */
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable @typescript-eslint/no-var-requires */
 
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require(`path`);
@@ -24,7 +27,9 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then((result) => {
+    // eslint-disable-next-line functional/no-conditional-statement
     if (result.errors) {
+      // eslint-disable-next-line functional/no-throw-statement
       throw result.errors;
     }
     const posts = result.data.allMdx.nodes;
@@ -47,6 +52,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
+  // eslint-disable-next-line functional/no-conditional-statement
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
     createNodeField({
