@@ -460,7 +460,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-syntax-jsx@7.12.1", "@babel/plugin-syntax-jsx@^7.12.1":
+"@babel/plugin-syntax-jsx@7.12.1", "@babel/plugin-syntax-jsx@^7.12.1", "@babel/plugin-syntax-jsx@^7.2.0":
   version "7.12.1"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@babel%2Fplugin-syntax-jsx/7.12.1#9d9d357cc818aa7ae7935917c1257f67677a0926"
   integrity sha512-1yRi7yAtB0ETgxdY9ti/p2TivUxJkTdhu/ZbF9MshVGqOx1TdB3b7xCXs49Fupgg50N45KcAsRP/ZqWjs9SRjg==
@@ -721,7 +721,7 @@
   dependencies:
     "@babel/plugin-transform-react-jsx" "^7.12.12"
 
-"@babel/plugin-transform-react-jsx@^7.12.10", "@babel/plugin-transform-react-jsx@^7.12.12", "@babel/plugin-transform-react-jsx@^7.12.5":
+"@babel/plugin-transform-react-jsx@^7.12.1", "@babel/plugin-transform-react-jsx@^7.12.10", "@babel/plugin-transform-react-jsx@^7.12.12", "@babel/plugin-transform-react-jsx@^7.12.5":
   version "7.12.12"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@babel%2Fplugin-transform-react-jsx/7.12.12#b0da51ffe5f34b9a900e9f1f5fb814f9e512d25e"
   integrity sha512-JDWGuzGNWscYcq8oJVCtSE61a5+XAOos+V0HrxnDieUus4UMnBEosDnY1VJqU5iZ4pA04QY7l0+JvHL1hZEfsw==
@@ -1023,6 +1023,13 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
+"@emotion/babel-plugin-jsx-pragmatic@^0.1.5":
+  version "0.1.5"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fbabel-plugin-jsx-pragmatic/0.1.5#27debfe9c27c4d83574d509787ae553bf8a34d7e"
+  integrity sha512-y+3AJ0SItMDaAgGPVkQBC/S/BaqaPACkQ6MyCI2CUlrjTxKttTVfD3TMtcs7vLEcLxqzZ1xiG0vzwCXjhopawQ==
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.2.0"
+
 "@emotion/babel-plugin@^11.0.0":
   version "11.1.2"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fbabel-plugin/11.1.2#68fe1aa3130099161036858c64ee92056c6730b7"
@@ -1041,6 +1048,16 @@
     source-map "^0.5.7"
     stylis "^4.0.3"
 
+"@emotion/babel-preset-css-prop@^11.0.0":
+  version "11.0.0"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fbabel-preset-css-prop/11.0.0#25b868affa620b9e97024b67f67ad32c03a0510e"
+  integrity sha512-E7z3jMf1OyThGpp3ngYGxOSGX5AdoSQTuqM9QgJNAHFh3Fi8N5CbWx6g+IdySJ8bjPiMgFQsIeEhkyy+4mDpCQ==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.12.1"
+    "@babel/runtime" "^7.7.2"
+    "@emotion/babel-plugin" "^11.0.0"
+    "@emotion/babel-plugin-jsx-pragmatic" "^0.1.5"
+
 "@emotion/cache@^11.1.3":
   version "11.1.3"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fcache/11.1.3#c7683a9484bcd38d5562f2b9947873cf66829afd"
@@ -1051,6 +1068,11 @@
     "@emotion/utils" "^1.0.0"
     "@emotion/weak-memoize" "^0.2.5"
     stylis "^4.0.3"
+
+"@emotion/core@^11.0.0":
+  version "11.0.0"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fcore/11.0.0#d075867e07864119de7cfd5268c15012bd2d6290"
+  integrity sha512-w4sE3AmHmyG6RDKf6mIbtHpgJUSJ2uGvPQb8VXFL7hFjMPibE8IiehG8cMX3Ztm4svfCQV6KqusQbeIOkurBcA==
 
 "@emotion/css@^11.1.3":
   version "11.1.3"
@@ -1068,10 +1090,30 @@
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fhash/0.8.0#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
   integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
 
+"@emotion/is-prop-valid@^1.0.0":
+  version "1.0.0"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fis-prop-valid/1.0.0#1dbe82e52a12c065d416a702e2d106e552cde5be"
+  integrity sha512-G5X0t7eR9pkhUvAY32QS3lToP9JyNF8It5CcmMvbWjmC9/Yq7IhevaKqxl+me2BKR93iTPiL/h3En1ZX/1G3PQ==
+  dependencies:
+    "@emotion/memoize" "^0.7.4"
+
 "@emotion/memoize@^0.7.4", "@emotion/memoize@^0.7.5":
   version "0.7.5"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fmemoize/0.7.5#2c40f81449a4e554e9fc6396910ed4843ec2be50"
   integrity sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==
+
+"@emotion/react@^11.1.4":
+  version "11.1.4"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Freact/11.1.4#ddee4247627ff7dd7d0c6ae52f1cfd6b420357d2"
+  integrity sha512-9gkhrW8UjV4IGRnEe4/aGPkUxoGS23aD9Vu6JCGfEDyBYL+nGkkRBoMFGAzCT9qFdyUvQp4UUtErbKWxq/JS4A==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+    "@emotion/cache" "^11.1.3"
+    "@emotion/serialize" "^1.0.0"
+    "@emotion/sheet" "^1.0.1"
+    "@emotion/utils" "^1.0.0"
+    "@emotion/weak-memoize" "^0.2.5"
+    hoist-non-react-statics "^3.3.1"
 
 "@emotion/serialize@^1.0.0":
   version "1.0.0"
@@ -1084,10 +1126,21 @@
     "@emotion/utils" "^1.0.0"
     csstype "^3.0.2"
 
-"@emotion/sheet@^1.0.0":
+"@emotion/sheet@^1.0.0", "@emotion/sheet@^1.0.1":
   version "1.0.1"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fsheet/1.0.1#245f54abb02dfd82326e28689f34c27aa9b2a698"
   integrity sha512-GbIvVMe4U+Zc+929N1V7nW6YYJtidj31lidSmdYcWozwoBIObXBnaJkKNDjZrLm9Nc0BR+ZyHNaRZxqNZbof5g==
+
+"@emotion/styled@^11.0.0":
+  version "11.0.0"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/@emotion%2Fstyled/11.0.0#698196c2822746360a8644a73a5d842b2d1a78a5"
+  integrity sha512-498laccxJlBiJqrr2r/fx9q+Pr55D0URP2UyOkoSGLjevb8LLAFWueqthsQ5XijE66iGo7y3rzzEYdA7CHmZEQ==
+  dependencies:
+    "@babel/runtime" "^7.7.2"
+    "@emotion/babel-plugin" "^11.0.0"
+    "@emotion/is-prop-valid" "^1.0.0"
+    "@emotion/serialize" "^1.0.0"
+    "@emotion/utils" "^1.0.0"
 
 "@emotion/unitless@^0.7.5":
   version "0.7.5"
@@ -5415,11 +5468,6 @@ emojis-list@^3.0.0:
   resolved "https://otis.bytesafe.dev/r/default/-/pull/emojis-list/3.0.0#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-emotion@^11.0.0:
-  version "11.0.0"
-  resolved "https://otis.bytesafe.dev/r/default/-/pull/emotion/11.0.0#e33353668e72f0adea1f6fba790dc6c5b05b45d9"
-  integrity sha512-QW3CRqic3aRw1OBOcnvxaHEpCmxtlGwZ5tM9dV5rY3Rn+F41E8EgTPOqJ5VfsqQ5ZXHDs2zSDyUwGI0ZfC2+5A==
-
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/encodeurl/1.0.2#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -6843,6 +6891,14 @@ gatsby-page-utils@^0.8.0:
     lodash "^4.17.20"
     micromatch "^4.0.2"
 
+gatsby-plugin-emotion@^5.3.0:
+  version "5.3.0"
+  resolved "https://otis.bytesafe.dev/r/default/-/pull/gatsby-plugin-emotion/5.3.0#4f1a42ddd38f3d2620aa87b02d4b0e9a87efb38e"
+  integrity sha512-zDbEOb5MvL4ve1OTZCtgVuEJUoyBgqJBByPO+xq87TsuKPJyzE2aRD7mtCcwivh4Yo7KBl1X9bl3EiOm5m50IA==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@emotion/babel-preset-css-prop" "^11.0.0"
+
 gatsby-plugin-feed-mdx@^1.0.1:
   version "1.0.1"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/gatsby-plugin-feed-mdx/1.0.1#5305b9a8c787a221d180c88542df0506db3ad7b2"
@@ -7953,7 +8009,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
   version "3.3.2"
   resolved "https://otis.bytesafe.dev/r/default/-/pull/hoist-non-react-statics/3.3.2#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==

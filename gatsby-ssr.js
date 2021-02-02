@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from "react";
-
 import { ThemeProvider } from "@redesign-system/react/ThemeContext";
 
 import "./src/styles/variables.css";
