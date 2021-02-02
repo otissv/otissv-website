@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable */
+
 export const theme = {
   font: {
     family: { sans: "Montserrat" },
@@ -45,7 +46,7 @@ export const theme = {
     },
   },
 
-  Button: ({ theme: { font } }: any) => ({
+  Button: ({ theme: { font } }) => ({
     default: {
       fontSize: font.size[3],
     },

@@ -1,6 +1,7 @@
 {
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "theme.js"
   ],
   "exclude": [
     "node_modules",

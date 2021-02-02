@@ -177,7 +177,7 @@ export function Contact<Props extends ContactProps>({
               id={`form-${CONTACT_FORM}`}
               name={CONTACT_FORM}
               data-netlify="true"
-              netlify
+              netlify={true}
               method="POST"
               onSubmit={handleOnSubmit}
               radius="5px"
