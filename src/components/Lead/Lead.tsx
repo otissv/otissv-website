@@ -15,7 +15,8 @@ export function Lead<Props extends LeadProps>({
       className={classNames}
       fs={7}
       lineHeight="1.3"
-      css="font-weight: 700;"
+      // css="font-weight: 700;"
+      css={{ fontWeight: 700 }}
       {...propsRest}
     >
       {children}

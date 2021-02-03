@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@redesign-system/react-ui/Box";
 import { Fragment } from "react";
+import { css as emotionCSS } from "@emotion/react";
 
 export function NetlifyFormFields({
   name,
@@ -11,7 +12,7 @@ export function NetlifyFormFields({
     <Fragment>
       <input type="hidden" name="form-name" value={name} />
       <Box
-        css={`
+        css={emotionCSS`
           width: 0;
           height: 0px;
           label {

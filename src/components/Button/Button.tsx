@@ -3,9 +3,10 @@ import {
   Button as UIButton,
   ButtonInterface,
 } from "@redesign-system/react-ui/Button";
+import { css as emotionCSS } from "@emotion/react";
 
 export function Button({
-  css,
+  css = "",
   children,
   className = "",
   ...propsRest
@@ -16,11 +17,14 @@ export function Button({
     font-weight: 700;
   ${css}
   `;
+
   return (
     <UIButton
       className={classNames}
       radius="round"
-      css={cssUIButton}
+      css={emotionCSS`
+        ${cssUIButton}
+      `}
       {...propsRest}
       py="5px"
       px="20px"

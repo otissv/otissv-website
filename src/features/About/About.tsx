@@ -3,6 +3,7 @@ import { Box } from "@redesign-system/react-ui/Box";
 import { Typography } from "@redesign-system/react-ui/Typography";
 import ReactScrollTrigger from "react-scroll-trigger";
 import Img from "gatsby-image";
+import { css as emotionCSS } from "@emotion/react";
 
 import { AboutProps } from "./types.about";
 import { Heading } from "../../components/Heading";
@@ -36,7 +37,7 @@ export function About<Props extends AboutProps>({
       mw="var(--container)"
       px={7}
       mb={11}
-      css={`
+      css={emotionCSS`
         &::after {
           content: "";
           display: table;

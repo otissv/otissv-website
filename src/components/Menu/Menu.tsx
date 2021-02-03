@@ -65,7 +65,7 @@ export function Menu<Props extends MenuProps>({
           jc="flex-end"
           stacked={false}
           p={3}
-          css=".NavItem { margin-top: 4px;}"
+          // css=".NavItem { margin-top: 4px;}"
         >
           <NavItems
             currentRoute={currentRoute}

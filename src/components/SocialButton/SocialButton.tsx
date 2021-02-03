@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@redesign-system/react-ui/Box";
 import { toSnakeCase } from "ufunc/textTransform";
+import { css as emotionCSS } from "@emotion/react";
 
 import { SocialButtonProps } from "./types.socialButton";
 import { SocialIcon as SocialIconType } from "../SocialIcon";
@@ -37,7 +38,7 @@ export function SocialButton({
 // eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
 SocialButton.displayName = "SocialButton";
 
-const socialIconCss = `
+const socialIconCss = emotionCSS`
   border: 2px solid var(--link-color);
   display: flex;
   justify-content: center;

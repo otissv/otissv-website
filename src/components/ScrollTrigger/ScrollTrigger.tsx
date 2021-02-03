@@ -16,7 +16,7 @@ export function ScrollTrigger({
   readonly [key: string]: any;
 }): JSX.Element {
   return (
-    <Box css="position: relative;">
+    <Box css={{ position: "relative" }}>
       <ScrollTriggerComponent
         onEnter={onEnter}
         onExit={onEnter || onExit}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Textbox } from "@redesign-system/react-ui/Textbox";
 import { Box } from "@redesign-system/react-ui/Box";
+import { css as emotionCSS } from "@emotion/react";
 
 import { SubscribeProps } from "./types.subscribe";
 import { CTAButton } from "../../components/Button";
@@ -28,7 +29,7 @@ export function Subscribe({
   const [showThankYou, setShowThankYou] = React.useState(false);
   const SUBMIT_FORM = "subscribe";
 
-  const css = `
+  const css = emotionCSS`
     background: var(--background-color-3);
   `;
 
@@ -146,18 +147,19 @@ export function Subscribe({
               mb={7}
               mx={0}
               border={hasError}
-              css={`
-                border-bottom-left-radius: 30px;
-                border-top-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-                border-top-right-radius: 30px;
-                padding-left: 30px;
-              `}
+              css={{
+                borderBottomLeftRadius: "30px",
+                borderTopLeftRadius: "30px",
+                borderBottomRightRadius: "30px",
+                borderTopRightRadius: "30px",
+                paddingLeft: "30px",
+              }}
+              //TODO: mq should overwrite css
               mq={{
                 md: {
                   min: {
-                    borderTopRightRadius: "0px",
-                    borderBottomRightRadius: "0px",
+                    borderTopRightRadius: "0px !important",
+                    borderBottomRightRadius: "0px !important",
                     height: "63px",
                   },
                 },
