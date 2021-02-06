@@ -84,7 +84,7 @@ export function Contact<Props extends ContactProps>({
       css={{
         "&:before": {
           content: '""',
-          backgroundImage: "url(shape.svg)",
+          backgroundImage: "url(images/shape.svg)",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "absolute",
