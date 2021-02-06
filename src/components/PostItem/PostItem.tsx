@@ -14,11 +14,15 @@ export function PostItem<Props extends PostItemProps>({
   ...propsRest
 }: Props): JSX.Element {
   const classNames = `PostItem ${className}`;
-  const image = "https://via.placeholder.com/760x422";
+  const image = {
+    src: "https://via.placeholder.com/760x422",
+    alt: "placehoder",
+  };
+
   return (
     <Box className={classNames} {...propsRest}>
       <Link to={slug}>
-        <img src={image} width="760px" height="422px" />
+        <img src={image.src} width="760px" height="422px" alt={image.alt} />
         <Box
           pt={4}
           px={5}

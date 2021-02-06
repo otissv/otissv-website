@@ -1,0 +1,56 @@
+---
+title: Themeing in gatsby
+date: 2020-01-25
+published: true
+---
+
+gatsby-browser.js
+
+```
+import "./src/styles/variables.css";
+import "./src/styles/global.css";
+
+import React from "react";
+import { ThemeProvider } from "@redesign-system/react/ThemeContext";
+
+import { myCache } from "./create-emotion-cache";
+import { RootElement } from "./RootElement";
+import { theme } from "./theme";
+
+export const wrapRootElement = ({ element }) => (
+  <RootElement value={myCache}>
+    <ThemeProvider theme={theme} isBuilt={true}>
+      {element}
+    </ThemeProvider>
+  </RootElement>
+);
+
+```
+
+gatsby-srr.js
+
+```tsx
+import "./src/styles/variables.css";
+import "./src/styles/global.css";
+
+import React from "react";
+import { ThemeProvider } from "@redesign-system/react/ThemeContext";
+
+import { RootElement } from "./RootElement";
+import { createMyCache } from "./create-emotion-cache";
+
+import { theme } from "./theme";
+const App = ({ element }) => (
+  <ThemeProvider theme={theme} isBuilt={true}>
+    {element}
+  </ThemeProvider>
+);
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <RootElement value={createMyCache()}>
+      <App>{element}</App>
+    </RootElement>
+  );
+};
+```

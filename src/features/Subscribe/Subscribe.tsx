@@ -31,6 +31,9 @@ export function Subscribe({
 
   const css = emotionCSS`
     background: var(--background-color-3);
+    h3 {
+      margin-bottom: 10px;
+    }
   `;
 
   function validateEmail(value: string): boolean {

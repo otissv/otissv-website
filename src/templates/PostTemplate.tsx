@@ -5,7 +5,6 @@ import { Typography } from "@redesign-system/react-ui/Typography";
 import { Dropdown } from "@redesign-system/react-ui/Dropdown/Dropdown";
 import { DropdownButton } from "@redesign-system/react-ui/Dropdown/DropdownButton";
 import { DropdownContent } from "@redesign-system/react-ui/Dropdown/DropdownContent";
-import { Match } from "@redesign-system/react/Match";
 import { ShareVariantIcon } from "@redesign-system/react-material-icons/ShareVariantIcon";
 import {
   EmailShareButton,
@@ -17,6 +16,7 @@ import {
   TwitterShareButton,
   LinkedinShareButton,
 } from "react-share";
+import { Match } from "@redesign-system/react/Match";
 
 import Img from "gatsby-image";
 
@@ -59,7 +59,13 @@ const PostTemplate: FC<Props> = function Post({
   }
 
   return (
-    <PageLayout company={company} social={social} {...data} page={propsRest}>
+    <PageLayout
+      id="Post-page"
+      company={company}
+      social={social}
+      {...data}
+      page={propsRest}
+    >
       <Section
         centered
         mw="768px"
@@ -127,7 +133,11 @@ const PostTemplate: FC<Props> = function Post({
             </LinkedinShareButton>
 
             <Dropdown id="share-dropdown">
-              <DropdownButton id="share-dropdown" onClick={handleShareToggle}>
+              <DropdownButton
+                id="share-dropdown"
+                onClick={handleShareToggle}
+                title="share options"
+              >
                 <ShareVariantIcon color="var(--link-color)" />
               </DropdownButton>
               <DropdownContent
@@ -193,7 +203,7 @@ const PostTemplate: FC<Props> = function Post({
               },
             }}
           >
-            <Typography as="h3" fs={5}>
+            <Typography as="h3" fs={5} mb={3}>
               The Author
             </Typography>
 

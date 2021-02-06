@@ -1,19 +1,78 @@
 :root {
   --text: #f7f7f7;
   --background-color: #1d2330;
-  --background-color: #1d2330;
   --background-color-2: #141620;
   --background-color-3: #2b313e;
-
+  --background-color-4: hsla(211, 26%, 21%, 1);
   --cta-background-color: #cf4141;
   --cta-background-hover-color: #942e2e;
 
   --link-color: #fab8d9;
 
   --container: 1600px;
+
+  --code-meta-spacing: 8px;
+
+  --blockquote-border-color: rgb(74, 85, 104);
 }
 
 html {
   color: var(--text);
   background: var(--background-color);
+}
+
+.Code {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Code-lang {
+  position: absolute;
+  bottom: 0;
+  align-self: flex-end;
+  margin: 0 var(--code-meta-spacing) var(--code-meta-spacing) 0;
+  background: var(--background-color-2);
+  padding-right: 0.6em;
+  padding-left: 0.6em;
+  border-radius: 5px;
+}
+
+.CopyToClipboard {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  position: absolute;
+  margin: var(--code-meta-spacing) var(--code-meta-spacing) 0 0;
+  cursor: pointer;
+}
+
+.CopyToClipboard:hover {
+  color: var(--link-color);
+}
+
+.CopyToClipboard-content {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.prism-code {
+  border-radius: 10px;
+  padding: 38px 24px 38px 24px;
+  font-family: "Source Code Pro", "Consolas", "Inconsolata", "Monaco", monospace;
+}
+
+.Blockquote {
+  background: var(--background-color-4);
+  color: #fff;
+  font-size: 24px;
+  border-left-color: transparent;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.Blockquote-quotes {
+  transform: translate(12px, 12px);
 }

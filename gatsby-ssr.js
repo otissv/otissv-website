@@ -2,11 +2,11 @@
 import "./src/styles/variables.css";
 import "./src/styles/global.css";
 
-import { CacheProvider } from "@emotion/react";
-
-import { createMyCache } from "./create-emotion-cache";
 import React from "react";
 import { ThemeProvider } from "@redesign-system/react/ThemeContext";
+
+import { RootElement } from "./RootElement";
+import { createMyCache } from "./create-emotion-cache";
 
 import { theme } from "./theme";
 const App = ({ element }) => (
@@ -17,8 +17,8 @@ const App = ({ element }) => (
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <CacheProvider value={createMyCache()}>
+    <RootElement value={createMyCache()}>
       <App>{element}</App>
-    </CacheProvider>
+    </RootElement>
   );
 };

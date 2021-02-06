@@ -6,7 +6,7 @@ import { SeoProps } from "./types.seo";
 export function Seo<Props extends SeoProps>({
   description = "",
   keywords = [],
-  lang = "en",
+  lang = "en-GB",
   meta = [],
   siteMetadata = {},
   title,
