@@ -4,7 +4,7 @@ import { ErrorMessageInterface } from "@redesign-system/react-ui/ErrorMessage";
 import { Fieldset } from "@redesign-system/react-ui/Fieldset";
 import { FormTextbox } from "@redesign-system/react-ui/FormTextbox";
 import { Typography } from "@redesign-system/react-ui/Typography";
-import { toSnakeCase } from "ufunc/textTransform";
+import { toSnakeCase } from "ufunc/toSnakeCase";
 import { everyTrue } from "ufunc/everyTrue";
 
 import { ScrollTrigger } from "../../components/ScrollTrigger";
@@ -77,14 +77,14 @@ export function Contact<Props extends ContactProps>({
   }
   return (
     <Section
-      id="contact"
+      id="contact-section"
       className={classNames}
       mt={10}
       centered
       css={{
         "&:before": {
           content: '""',
-          backgroundImage: "url(images/shape.svg)",
+          backgroundImage: "url(shape.svg)",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           position: "absolute",

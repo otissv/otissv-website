@@ -84,7 +84,7 @@ export function Subscribe({
 
   return (
     <Section
-      id="subscribe"
+      id="subscribe-section"
       className={classNames}
       d="flex"
       fld="column"

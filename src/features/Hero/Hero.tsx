@@ -26,7 +26,7 @@ export function Hero<Props extends HeroProps>({
 
   return (
     <Section
-      id="hero"
+      id="hero-section"
       className={classNames}
       centered
       px={7}
@@ -62,7 +62,6 @@ export function Hero<Props extends HeroProps>({
           animate={animate}
           animations={useAnimations({
             transform: ["translateY(-100px)", "translateY(0px)"],
-            opacity: [0.2, 1],
           })}
         >
           {title}
@@ -127,7 +126,6 @@ export function Hero<Props extends HeroProps>({
           animate={animate}
           animations={useAnimations({
             transform: ["translateX(-200px)", "translateX(0px)"],
-            opacity: [0.2, 1, 100],
           })}
           mq={{
             lg: {
@@ -144,7 +142,6 @@ export function Hero<Props extends HeroProps>({
           animate={animate}
           animations={useAnimations({
             transform: ["translateY(100px)", "translateY(0px)"],
-            opacity: [0.2, 1],
           })}
         >
           <CTAButton

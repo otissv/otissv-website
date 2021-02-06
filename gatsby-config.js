@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-portal`,
+    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -22,7 +23,7 @@ module.exports = {
         sourceMap: true,
         autoLabel: "dev-only",
         labelFormat: `[local]`,
-        cssPropOptimization: true,
+        cssPropOptimization: false,
       },
     },
     {
@@ -58,8 +59,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/images`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `GatsbyJS`,
+    //     short_name: `GatsbyJS`,
+    //     start_url: `/`,
+    //     background_color: `#f7f0eb`,
+    //     theme_color: `#a2466c`,
+    //     display: `standalone`,
+    //   },
+    // },
   ],
 };

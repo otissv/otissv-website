@@ -28,7 +28,7 @@ export function Services<Props extends ServiceProps>({
 
   return (
     <Section
-      id="services"
+      id="services-section"
       className={classNames}
       centered
       mb={11}
@@ -39,8 +39,11 @@ export function Services<Props extends ServiceProps>({
         px={7}
         animate={animateLead}
         animations={useAnimations({
-          transform: ["translateX(-100px)", "translateX(0px)"],
-          opacity: [0.2, 1, 100, { duration: 2000 }],
+          transform: [
+            "translateX(-100px)",
+            "translateX(0px)",
+            { elapsed: -50 },
+          ],
         })}
       >
         Services
@@ -75,8 +78,11 @@ export function Services<Props extends ServiceProps>({
               css=""
               animate={animateLead}
               animations={useAnimations({
-                transform: ["translateX(-100px)", "translateX(0px)"],
-                opacity: [0.2, 1, 100, { duration: 2000 }],
+                transform: [
+                  "translateX(-100px)",
+                  "translateX(0px)",
+                  { elapsed: -100 },
+                ],
               })}
             >
               Design. <br />
@@ -86,8 +92,11 @@ export function Services<Props extends ServiceProps>({
               d="block"
               animate={animateLead}
               animations={useAnimations({
-                transform: ["translateX(-200px)", "translateX(0px)"],
-                opacity: [0.2, 1, 100],
+                transform: [
+                  "translateX(-200px)",
+                  "translateX(0px)",
+                  { elapsed: -150 },
+                ],
               })}
             >
               Develop.
@@ -98,8 +107,11 @@ export function Services<Props extends ServiceProps>({
               d="block"
               animate={animateLead}
               animations={useAnimations({
-                transform: ["translateX(-300px)", "translateX(0px)"],
-                opacity: [0.2, 1, 100],
+                transform: [
+                  "translateX(-300px)",
+                  "translateX(0px)",
+                  { elapsed: -200 },
+                ],
               })}
             >
               Ship.

@@ -8,6 +8,7 @@ import { Lead } from "../../components/Lead";
 import { Section } from "../../components/Section";
 import { useAnimations } from "../../hooks/useAnimations";
 import { useScrollTrigger } from "../../hooks/useScrollTrigger";
+import { Typography } from "@redesign-system/react-ui/Typography";
 
 const ScrollTrigger: any = ReactScrollTrigger;
 
@@ -24,7 +25,7 @@ export function Technologies<Props extends TechnologiesProps>({
       <ScrollTrigger onEnter={onEnter} onExit={onEnter} />
 
       <Section
-        id="technologies"
+        id="technologies-section"
         centered
         className={classNames}
         mw="var(--container)"
@@ -34,8 +35,11 @@ export function Technologies<Props extends TechnologiesProps>({
         <Heading
           animate={animate}
           animations={useAnimations({
-            transform: ["translateX(-100px)", "translateX(0px)"],
-            opacity: [0.2, 1, 100, { duration: 1000 }],
+            transform: [
+              "translateX(-100px)",
+              "translateX(0px)",
+              { elapsed: -50 },
+            ],
           })}
         >
           {title}
@@ -45,14 +49,17 @@ export function Technologies<Props extends TechnologiesProps>({
           mb={8}
           animate={animate}
           animations={useAnimations({
-            transform: ["translateX(-200px)", "translateX(0px)"],
-            opacity: [0.2, 1, 100, { duration: 30000 }],
+            transform: [
+              "translateX(-200px)",
+              "translateX(0px)",
+              { elapsed: -150 },
+            ],
           })}
         >
           {lead}
         </Lead>
         <Box d="flex" flw="wrap" mb={10} jc="center">
-          <TechItem start={100}>
+          <TechItem start={100} elapsed={-100} label="React">
             {/* React */}
             <Box
               as="svg"
@@ -77,9 +84,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="#61DAFB"
               />
             </Box>
-            React
           </TechItem>
-          <TechItem start={200}>
+          <TechItem start={200} elapsed={-200} label="Firebase">
             {/* Firebase */}
             <Box
               as="svg"
@@ -112,9 +118,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="#FFA000"
               />
             </Box>
-            Firebase
           </TechItem>
-          <TechItem start={160}>
+          <TechItem start={160} elapsed={-160} label="Gatsby">
             {/* Gatsby */}
             <Box
               as="svg"
@@ -135,9 +140,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="white"
               />
             </Box>
-            Gatsby
           </TechItem>
-          <TechItem start={100}>
+          <TechItem start={100} elapsed={-100} label="Nodejs">
             {/* Nodejs */}
             <Box
               as="svg"
@@ -182,9 +186,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="#639D57"
               />
             </Box>
-            NodeJS
           </TechItem>
-          <TechItem start={200}>
+          <TechItem start={200} elapsed={-200} label="Next.js">
             {/* Next.js */}
             <Box
               as="svg"
@@ -205,9 +208,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="black"
               />
             </Box>
-            Next.js
           </TechItem>
-          <TechItem start={150}>
+          <TechItem start={150} elapsed={-150} label="Vue">
             {/* Vue */}
             <Box
               as="svg"
@@ -244,9 +246,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 </clipPath>
               </defs>
             </Box>
-            Vue.js
           </TechItem>
-          <TechItem start={100}>
+          <TechItem start={100} elapsed={-100} label="MongoDB">
             {/* MongoDB */}
             <Box
               as="svg"
@@ -299,9 +300,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="#58AA50"
               />
             </Box>
-            MongoDB
           </TechItem>
-          <TechItem start={160} mr="121px">
+          <TechItem start={160} label="GraphQL">
             {/* GraphQL */}
             <Box
               as="svg"
@@ -378,9 +378,8 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="#E535AB"
               />
             </Box>
-            GraphQL
           </TechItem>
-          <TechItem start={50}>
+          <TechItem start={50} label="TypeScript">
             {/* TypeScript */}
             <Box
               as="svg"
@@ -403,7 +402,6 @@ export function Technologies<Props extends TechnologiesProps>({
                 fill="white"
               />
             </Box>
-            TypeScript
           </TechItem>
         </Box>
       </Section>
@@ -411,33 +409,48 @@ export function Technologies<Props extends TechnologiesProps>({
   );
 }
 
-function TechItem({ children, start = 0, ...propsRest }: any) {
+function TechItem({ children, start = 0, label, elapsed, ...propsRest }: any) {
   const { animate, onEnter } = useScrollTrigger();
-  const animations = useAnimations({
+  const logoAnimations = useAnimations({
     transform: [
       `translateY(${start}px) scale(0.5)`,
       "translateY(0px) scale(1)",
+      { elapsed },
     ],
-    opacity: [0.2, 1, 100, { duration: 1000 }],
+    opacity: [0.2, 1, 100, { duration: 1000 }, { elapsed }],
+  });
+
+  const labelAnimations = useAnimations({
+    transform: [
+      `translateY(${start}px) scale(0.5)`,
+      "translateY(0px) scale(1)",
+      { elapsed: elapsed - 50 },
+    ],
   });
 
   return (
-    <div style={{ position: "relative" }}>
+    <Box
+      className="TechItem"
+      position="relative"
+      mr="81px"
+      d="flex"
+      fld="column"
+      ai="center"
+      jc="flex-end"
+    >
       <ScrollTrigger onEnter={onEnter} onExit={onEnter} />
       <Box
-        className="TechItem"
-        mb={9}
-        mr="81px"
-        d="flex"
-        fld="column"
-        ai="center"
-        jc="flex-end"
+        className="TechItem-background"
         animate={animate}
-        animations={animations}
+        animations={logoAnimations}
         {...propsRest}
       >
         {children}
       </Box>
-    </div>
+
+      <Typography mb={9} animate={animate} animations={labelAnimations}>
+        {label}
+      </Typography>
+    </Box>
   );
 }

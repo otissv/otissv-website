@@ -54,7 +54,7 @@ export const query = graphql`
     images: file(relativePath: { eq: "me1.jpeg" }) {
       me: childImageSharp {
         # Specify the image processing specifications right in the query.
-        fluid {
+        fluid(toFormat: WEBP) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -49,7 +49,7 @@ export function useAnimations({
               from: transform[0],
               to: transform[1] || 0,
               bounce: 1,
-              ...opacity[2],
+              ...transform[2],
             },
           }
         : {}),
@@ -70,7 +70,7 @@ export function useAnimations({
               from: transform[1],
               to: transform[0],
               bounce: 1,
-              ...opacity[2],
+              ...transform[2],
             },
           }
         : {}),

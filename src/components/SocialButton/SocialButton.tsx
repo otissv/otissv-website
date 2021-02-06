@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@redesign-system/react-ui/Box";
-import { toSnakeCase } from "ufunc/textTransform";
+import { toSnakeCase } from "ufunc/toSnakeCase";
 import { css as emotionCSS } from "@emotion/react";
 
 import { SocialButtonProps } from "./types.socialButton";

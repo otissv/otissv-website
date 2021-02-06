@@ -1,16 +1,19 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf");
+:root {
+  --text: #f7f7f7;
+  --background-color: #1d2330;
+  --background-color: #1d2330;
+  --background-color-2: #141620;
+  --background-color-3: #2b313e;
+
+  --cta-background-color: #cf4141;
+  --cta-background-hover-color: #942e2e;
+
+  --link-color: #fab8d9;
+
+  --container: 1600px;
 }
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.ttf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.ttf");
-  font-weight: 700;
+html {
+  color: var(--text);
+  background: var(--background-color);
 }

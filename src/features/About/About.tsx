@@ -31,7 +31,7 @@ export function About<Props extends AboutProps>({
 
   return (
     <Section
-      id="about"
+      id="about-section"
       className={classNames}
       centered
       mw="var(--container)"
@@ -61,8 +61,11 @@ export function About<Props extends AboutProps>({
       <Heading
         animate={animateHeading}
         animations={useAnimations({
-          transform: ["translateX(-100px)", "translateX(0px)"],
-          opacity: [0.2, 1, 100, { duration: 2000 }],
+          transform: [
+            "translateX(-100px)",
+            "translateX(0px)",
+            { elapsed: -50 },
+          ],
         })}
       >
         {title}
@@ -180,8 +183,11 @@ export function About<Props extends AboutProps>({
             mb={8}
             animate={animateLead}
             animations={useAnimations({
-              transform: ["translateX(200px)", "translateX(0px)"],
-              opacity: [0.2, 1, 100, { duration: 2000 }],
+              transform: [
+                "translateX(200px)",
+                "translateX(0px)",
+                { elapsed: -100 },
+              ],
             })}
           >
             {lead}
@@ -195,8 +201,11 @@ export function About<Props extends AboutProps>({
               lh={3}
               animate={animateLead}
               animations={useAnimations({
-                transform: ["translateY(100px)", "translateY(0px)"],
-                opacity: [0.2, 1, 100, { duration: 2000 }],
+                transform: [
+                  "translateY(100px)",
+                  "translateY(0px)",
+                  { elapsed: -200 },
+                ],
               })}
             >
               {text}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@redesign-system/react-ui/Box";
-import { toSnakeCase } from "ufunc/textTransform";
+import { toSnakeCase } from "ufunc/toSnakeCase";
 
 import { SocialLinksProps } from "./types.socialLinks";
 import { SocialButton } from "../SocialButton";

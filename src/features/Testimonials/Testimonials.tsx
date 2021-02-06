@@ -22,13 +22,12 @@ export function Testimonials<Props extends TestimonialsProps>({
   const animations = React.useCallback(function animations(start = 0) {
     return useAnimations({
       transform: [`translateX(${start}px)`, "translateX(0px)"],
-      opacity: [0.2, 1, 100, { duration: 2000 }],
     });
   }, []);
 
   return (
     <Section
-      id="testimonials"
+      id="testimonials-section"
       className={classNames}
       centered
       mw="var(--container)"
@@ -44,7 +43,6 @@ export function Testimonials<Props extends TestimonialsProps>({
         animate={animate}
         animations={useAnimations({
           transform: [`translateX(-200px)`, "translateX(0px)"],
-          opacity: [0.2, 1, 100, { duration: 2000 }],
         })}
       >
         Testimonials
@@ -109,9 +107,10 @@ export function Testimonials<Props extends TestimonialsProps>({
                   as="img"
                   src={avatar}
                   radius="circle"
-                  h="48px"
-                  w="48px"
+                  height="48px"
+                  width="48px"
                   mr={3}
+                  alt="avatar"
                 />
                 <div>
                   <span>{name}</span>

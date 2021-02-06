@@ -15,7 +15,7 @@ export function Layout<Props extends LayoutProps>({
   title,
 }: Props): JSX.Element {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} isBuilt={true}>
       <Seo
         author={author}
         description={description}
